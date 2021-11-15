@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}
+LolliPop
+{% endblock %}
+
+{% block body %}
+<div class="row mt-5">
+    <div class="col-12">
+        <table class="table table-light">
+            
+            {% for product in product_list %}
+            <div class="content">
+                <img src="{{ product.image.url }}">
+                    <p>{{ product.name }}</p>
+                    <p>Point : {{ product.price }}</p>
+                    <p>{{ product.description }}</p>
+                <!-- <form action='{{ product.name.url }}'> -->
+                    <!-- <a href="{{ product.video.url }}" download="{{ product.video.url }}">
+                        <button>Download</button>
+                    </a> -->
+                <!-- <form action='{% url "download_video" %}'>    
+                    <button type="submit">
+                        Download
+                    </button>
+                </form> -->
+            </div>
+            {% endfor %}
+            
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
